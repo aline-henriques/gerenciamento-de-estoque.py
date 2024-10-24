@@ -1,9 +1,11 @@
 Apresentação
 
 Introdução
+
 O propósito do nosso projeto é desenvolver um aplicativo de gestão de estoque que permita às empresas monitorar produtos, rastrear vendas e otimizar operações. O código foi desenvolvido em Python e utiliza JSON para o armazenamento de dados, implementando um sistema CRUD (Create, Read, Update, Delete).
 
 Desenvolvimento
+
 Carregando e Salvando
 A função carregar é responsável por abrir o arquivo JSON no modo leitura. 
 Utilizamos o bloco “try...except” para a possibilidade de o arquivo não ser encontrado, imprimindo uma mensagem de erro quando isso acontece. 
@@ -11,9 +13,11 @@ A função json.load é utilizada para carregar e armazenar os dados lidos no ar
 O comando print permite visualizar rapidamente os dados carregados, facilitando a depuração e execução do desenvolvedor.
 
 Iniciando
+
 Ao ser chamado, o programa inicia o estoque com os dados salvos do arquivo JSON. Se o arquivo não existir, o estoque será iniciado como um dicionário vazio.
 
 Desenvolvimento 2
+
 	•	CRUD
 
 Adicionar
