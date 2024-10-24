@@ -52,3 +52,5 @@ Foi implementada uma condição para que, caso o usuário digite um número inex
 Conclusão
 
 Em resumo, desenvolvemos um aplicativo de gestão de estoque que facilita o monitoramento de produtos, o rastreio de vendas e a otimização das operações. Utilizando Python e JSON, implementamos um sistema eficiente e fácil de usar, com um menu interativo que permite aos usuários gerenciar seu estoque de forma prática.
+
+https://genstock.my.canva.site/
