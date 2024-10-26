@@ -1,6 +1,6 @@
 import json
 
-#Carregando dados do estoque no arquivo json (estoque.json)
+#Carregando os dados do estoque no arquivo json (estoque.json)
 def carregar(arquivo='estoque.json'):
     try:
         with open(arquivo, 'r') as f:
@@ -17,7 +17,6 @@ def salvar(estoque, arquivo='estoque.json'):
         json.dump(estoque, f, indent=4)
         print("Dados salvos:", estoque)  # Depuração
 
-#Iniciando o programa
 estoque = carregar()
 
 #CRUD:
@@ -26,6 +25,7 @@ def adicionar(nome, quantidade):
     if nome in estoque:
         print(f"O produto '{nome}' já existe no estoque.")
     else:
+        estoque[nome] = {'quantidade': quantidade}  # Adiciona o produto ao estoque
         salvar(estoque) 
         print(f"Produto '{nome}' adicionado com sucesso.")
 
@@ -39,7 +39,7 @@ def atualizar(nome, quantidade=None):
     else:
         print(f"O Produto '{nome}' não foi encontrado no estoque.")
 
-#emover
+#Remover
 def remover(nome):
     if nome in estoque:
         del estoque[nome]
@@ -60,12 +60,14 @@ def visualizar():
 #Menu de interação do usuário
 def menu():
     while True:
-        opcao = input("Escolha a opção desejada: ")
-        print("\n1. Adicionar produto")
+        print("\nEscolha a opção desejada:")
+        print("1. Adicionar produto")
         print("2. Atualizar produto")
         print("3. Remover produto")
         print("4. Visualizar estoque")
         print("5. Sair")
+        
+        opcao = input("Digite sua opção: ")
 
         if opcao == '1':
             nome = input("Insira o nome do produto: ")
