@@ -1,5 +1,3 @@
-### Apresentação
-
 # Introdução
 O objetivo do nosso projeto é desenvolver um aplicativo de gestão de estoque que permita às empresas monitorar produtos, rastrear vendas e otimizar operações de forma prática e eficiente. Utilizamos Python para desenvolver o sistema e JSON para o armazenamento dos dados, aplicando um sistema CRUD (Create, Read, Update, Delete) para facilitar o gerenciamento do estoque.
 
@@ -16,8 +14,9 @@ A função salvar grava as alterações feitas no estoque no arquivo JSON, salva
 ## Iniciando o Estoque
 Ao iniciar o programa, ele tenta carregar os dados do arquivo JSON. Caso o arquivo não exista, o estoque será inicializado como um dicionário vazio, pronto para receber novos produtos.
 
-CRUD: Operações de Gestão de Estoque
-Adicionar Produto
+## CRUD
+### Operações de Gestão de Estoque
+## Adicionar Produto
 A função adicionar permite que o usuário adicione um novo produto ao estoque.
 
 	•	Se o produto já existir, uma mensagem informa o usuário, evitando duplicações.
