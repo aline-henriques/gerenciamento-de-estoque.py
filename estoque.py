@@ -1,33 +1,31 @@
+import os
 import json
 
-#Carregando os dados do estoque no arquivo json (estoque.json)
-def carregar(arquivo='estoque.json'):
-    try:
-        with open(arquivo, 'r') as f:
-            data = json.load(f)
-            print("Dados carregados:", data) 
-            return data
-    except FileNotFoundError:
-        print("Arquivo não encontrado.") 
-        return {}
+#Carregando dados do estoque no arquivo json (estoque.json)
+arquivo = os.path.join(os.path.dirname(__file__), 'estoque.json') 
+
+def carregar():
+
+    with open(arquivo, 'r') as f:
+        return json.load(f)
+   
 
 #Salvando os dados do estoque no arquivo json (estoque.json)
-def salvar(estoque, arquivo='estoque.json'):
+def salvar(estoque):
     with open(arquivo, 'w') as f:
         json.dump(estoque, f, indent=4)
-        print("Dados salvos:", estoque)  # Depuração
+    print("Dados salvos")
 
-estoque = carregar()
+#Iniciando o programa
 
 #CRUD:
 #Adicionar
 def adicionar(nome, quantidade):
-    if nome in estoque:
-        print(f"O produto '{nome}' já existe no estoque.")
-    else:
-        estoque[nome] = {'quantidade': quantidade}  # Adiciona o produto ao estoque
-        salvar(estoque) 
-        print(f"Produto '{nome}' adicionado com sucesso.")
+    estoque = carregar()
+    estoque.append({'nome': nome, 'quantidade': quantidade})
+   
+    salvar(estoque) 
+    
 
 #Atualizar
 def atualizar(nome, quantidade=None):
@@ -39,7 +37,7 @@ def atualizar(nome, quantidade=None):
     else:
         print(f"O Produto '{nome}' não foi encontrado no estoque.")
 
-#Remover
+#Rmover
 def remover(nome):
     if nome in estoque:
         del estoque[nome]
@@ -60,14 +58,12 @@ def visualizar():
 #Menu de interação do usuário
 def menu():
     while True:
-        print("\nEscolha a opção desejada:")
-        print("1. Adicionar produto")
+        opcao = input("Escolha a opção desejada: ")
+        print("\n1. Adicionar produto")
         print("2. Atualizar produto")
         print("3. Remover produto")
         print("4. Visualizar estoque")
         print("5. Sair")
-        
-        opcao = input("Digite sua opção: ")
 
         if opcao == '1':
             nome = input("Insira o nome do produto: ")
