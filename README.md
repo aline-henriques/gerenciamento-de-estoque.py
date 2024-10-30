@@ -16,6 +16,7 @@ Ao iniciar o programa, ele tenta carregar os dados do arquivo JSON. Caso o arqui
 
 ## CRUD
 ### Operações de Gestão de Estoque
+
 ## Adicionar Produto
 A função adicionar permite que o usuário adicione um novo produto ao estoque.
 
