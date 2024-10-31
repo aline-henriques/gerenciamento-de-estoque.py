@@ -11,7 +11,7 @@ A função `carregar` abre o arquivo JSON no modo de leitura, carregando o conte
 
 ## Desenvolvimento 2
 
-- CRUD - Operações de Gestão de Estoque
+- ### CRUD - Operações de Gestão de Estoque
 
 ### Adicionar Produto:
 A função `adicionar` permite que o usuário insira um novo produto no estoque. Primeiramente, ela verifica se o produto já existe, evitando duplicações. Se for um novo item, ele é adicionado ao dicionário `estoque` com a quantidade especificada, e os dados são salvos no arquivo JSON.
