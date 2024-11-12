@@ -3,18 +3,14 @@ import json
 
 arquivo = os.path.join(os.path.dirname(__file__), 'estoque.json')
 
-#Verifica se o arquivo existe
 if not os.path.exists(arquivo):    
-    #Cria um arquivo json
     with open(arquivo, 'w') as f:
-        json.dump({}, f)  #Dados iniciais como um dicionário vazio
+        json.dump({}, f)  
 
-#Carregando os dados no estoque
 def carregar():
     with open(arquivo, 'r') as f:
         return json.load(f)
 
-#Salvando os dados no estoque
 def salvar(estoque):
     with open(arquivo, 'w') as f:
         json.dump(estoque, f, indent=4)
@@ -102,4 +98,3 @@ def menu():
 
 if __name__ == '__main__':
     menu()
-
